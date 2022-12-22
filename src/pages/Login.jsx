@@ -65,6 +65,7 @@ class Login extends React.Component {
               data-testid="login-name-input"
               value={ name }
               onChange={ this.handleChange }
+              onKeyDown={ (e) => e.key === 'Enter' && this.handleClick() }
             />
           </label>
           <button
