@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
 
 class MusicCard extends React.Component {
@@ -8,6 +8,12 @@ class MusicCard extends React.Component {
     checkboxChecked: false,
     isLoading: false,
   };
+
+  async componentDidMount() {
+    this.setState({
+      checkboxChecked: await this.getFromFavorites(),
+    });
+  }
 
   handleChangeCheckbox = async ({ target: { checked } }) => {
     const { song } = this.props;
@@ -17,10 +23,16 @@ class MusicCard extends React.Component {
     if (checked) {
       await addSong(song);
       this.setState({
-        checkboxChecked: true,
+        checkboxChecked: checked,
         isLoading: false,
       });
     }
+  };
+
+  getFromFavorites = async () => {
+    const { song: { trackName } } = this.props;
+    const datafav = await getFavoriteSongs();
+    return datafav.map((fav) => fav.trackName).includes(trackName);
   };
 
   render() {

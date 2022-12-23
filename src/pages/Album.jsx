@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import Loading from './Loading';
 
 class Album extends React.Component {
   state = {
     artistName: '',
     collectionName: '',
     apiReturnFromIndex1on: [],
+    isLoading: false,
   };
 
   componentDidMount() {
@@ -26,14 +28,19 @@ class Album extends React.Component {
   };
 
   render() {
-    const { artistName, collectionName, apiReturnFromIndex1on } = this.state;
+    const { artistName, collectionName, apiReturnFromIndex1on,
+      isLoading } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
+        {isLoading && <Loading />}
         <h1 data-testid="artist-name">{artistName}</h1>
         <h3 data-testid="album-name">{collectionName}</h3>
         { apiReturnFromIndex1on
-          .map((song) => <MusicCard key={ song.trackId } song={ song } />)}
+          .map((song) => (<MusicCard
+            key={ song.trackId }
+            song={ song }
+          />))}
       </div>
     );
   }
