@@ -7,7 +7,7 @@
   <a href="#contato">Contato</a>
 </p>
 <h1 align='center'>
-  <img src='https://github.com/carloshtbraga/Projeto-TrybeTunes/blob/main/TrybeTunes.png?raw=true' width="350" heigth="450"/>
+  <img src='https://github.com/carloshtbraga/Projeto-TrybeTunes/blob/main/TrybeTunes.png?raw=true' width="450" heigth="350"/>
 </h1>
 <h1 align='center'>Sobre o projeto</h1>
 <p align='center'>Projeto que simula o Spotify!</p>
