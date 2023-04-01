@@ -21,6 +21,7 @@
 <h1 align='center'>Como executar o projeto</h1>
 
 <p align='center'>Com tudo instalado, siga os passos abaixo para executar o projeto:</p>
+
 ```bash
 # Clone o repositório
 $ git clone https://github.com/seu-usuario/nome-do-repositorio.git
