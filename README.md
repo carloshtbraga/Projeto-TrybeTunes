@@ -1,4 +1,4 @@
-<h1 align='center'>Online Store</h1>
+<h1 align='center'>Trybe Tunes</h1>
  <p align="center">
   <a href="#sobre-o-projeto">Sobre o Projeto</a> •
   <a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a> •
